@@ -20,7 +20,8 @@ class DoublyLinkedList{
     private:
         Node* head;
         Node* tail;
-
+    public:
+        DoublyLinkedList(): head(NULL), tail(NULL){} 
 
 };
 
