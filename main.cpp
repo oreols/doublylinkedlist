@@ -26,11 +26,26 @@ class DoublyLinkedList{
     void AddToBeggining(int data){
         Node* new_node = new Node(data);
         if(!head){
-            head = new_node = tail;
+            head = tail = new_node;
         }else{
             new_node->next = head;
             head->prev = new_node;
             head = new_node;
+        }
+    }
+
+    void AddToEnd(int data){
+        Node* new_node = new Node(data);
+        if(!tail){
+            tail = head = new_node;
+
+        }else{
+            new_node->prev = tail;
+            tail->next = new_node;
+            tail = new_node;
+
+
+
         }
     }
 
