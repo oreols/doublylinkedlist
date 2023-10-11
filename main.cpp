@@ -49,6 +49,34 @@ class DoublyLinkedList{
         }
     }
 
+    void AddAtIndex(int data, int index){
+        if (index < 0){
+            cout << "Index musi byc nieujemny" << endl;
+            return;
+        }
+        Node* new_node = new Node(data);
+        if(index == 0){
+            AddToBeggining(data);
+        }else{
+            Node* current = head;
+            int i = 0;
+            while(i < index - 1 && current){
+                current = current->next; 
+                i++;
+            }
+
+            
+
+
+        }
+
+
+
+
+
+        
+    }
+
 
 
     
