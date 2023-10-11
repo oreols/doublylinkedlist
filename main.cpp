@@ -21,7 +21,22 @@ class DoublyLinkedList{
         Node* head;
         Node* tail;
     public:
-        DoublyLinkedList(): head(NULL), tail(NULL){} 
+        DoublyLinkedList(): head(NULL), tail(NULL){}
+
+    void AddToBeggining(int data){
+        Node* new_node = new Node(data);
+        if(!head){
+            head = new_node = tail;
+        }else{
+            new_node->next = head;
+            head->prev = new_node;
+            head = new_node;
+        }
+    }
+
+
+
+    
 
 };
 
