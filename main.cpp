@@ -106,15 +106,61 @@ class DoublyLinkedList{
                 delete temp;
             }
         }    
-            
-            
-            
+
+        void RemoveAtIndex(int data, int index){
+            if(index < 0){
+                cout << "Index musi byc nieujemny" << endl;
+                return;
+            }
+            if(!head){
+                cout << "Lista jest pusta" << endl;
+                return;
+            }
+
+            if(index == 0){
+                RemoveFromTheBeginning(data);
+            }else{
+                Node* current = head;
+                int i = 0;
+                while(i < index && current){
+                    current = current->next; 
+                    i++;
+                }
+                if(!current){
+                    cout << "Index poza zakresem" << endl;
+                    return;
+                }
+                if(current == tail){
+                    RemoveFromTheEnd(data);
+                }else{
+                    current->prev->next = current->next;
+                    current->next->prev = current->prev;
+                    delete current;
+                }
+            }
 
 
-            
+        }
+
+        void Print(){
+            Node* current = head;
+            while(current){
+                cout << current->data << " ";
+                current = current->next;
+            }
+            cout << endl;
+        }
+
+        void PrintBackwards(){
+            Node* current = tail;
+            while(current){
+                cout << current->data << " ";
+                current = current->prev;
+            }
+            cout << endl;
+        }
 
 
-    }
 
 
 
