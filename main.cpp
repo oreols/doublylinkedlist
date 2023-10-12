@@ -1,9 +1,6 @@
 #include <iostream>
 using namespace std;
  
-#include <iostream>
-using namespace std;
- 
 
 
 class Node {
@@ -75,12 +72,14 @@ class DoublyLinkedList{
             }
             current->next = new_node;
         }
+    }
+    
 
         void RemoveFromTheBeginning(int data){
             if(!head){
                 cout << "Lista jest pusta" << endl;
                 return;
-            {
+            }
 
             if(head == tail){
                 delete head;
@@ -91,6 +90,7 @@ class DoublyLinkedList{
                 head->prev = NULL;
                 delete temp;
             }
+        }
         void RemoveFromTheEnd(int data){
             if(!tail){
                 cout << "Lista jest pusta" << endl;
@@ -190,20 +190,23 @@ class DoublyLinkedList{
             return -1;
         }
 
-
-
-
-
-
-
-
-
-
-    
-
+        void Clear(){
+            while (head){
+                DoublyLinkedList::RemoveFromTheBeginning(head->data);
+            }
+                
+        }
+        
 };
 
 
 int main() {
+    DoublyLinkedList lista;
+    lista.AddToBeggining(1);
+    lista.AddToBeggining(4);
+    lista.AddToBeggining(5);
+    lista.AddToEnd(2);
+    lista.Print();
+
     return 0;
 }
