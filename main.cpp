@@ -175,6 +175,21 @@ class DoublyLinkedList{
             return -1;
         }
 
+        int prevElement(int data){
+            Node* current = head;
+            while(current){
+                if(current->data == data){
+                    if(current->prev){
+                        return current->prev->data;
+                    }else{
+                        return -1;
+                    }
+                }
+                current = current->next;
+            }
+            return -1;
+        }
+
 
 
 
