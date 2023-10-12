@@ -160,6 +160,21 @@ class DoublyLinkedList{
             cout << endl;
         }
 
+        int nextElement(int data){
+            Node* current = head;
+            while(current){
+                if(current->data == data){
+                    if(current->next){
+                        return current->next->data;
+                    }else{
+                        return -1;
+                    }
+                }
+                current = current->next;
+            }
+            return -1;
+        }
+
 
 
 
