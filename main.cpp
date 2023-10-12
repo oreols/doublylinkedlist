@@ -90,7 +90,22 @@ class DoublyLinkedList{
                 head = head->next;
                 head->prev = NULL;
                 delete temp;
-            }    
+            }
+        void RemoveFromTheEnd(int data){
+            if(!tail){
+                cout << "Lista jest pusta" << endl;
+                return;
+            }
+            if(head == tail){
+                delete head;
+                head = tail = NULL;
+            }else{
+                Node* temp = tail;
+                tail = tail->prev;
+                tail->next = NULL;
+                delete temp;
+            }
+        }    
             
             
             
