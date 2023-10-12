@@ -207,6 +207,8 @@ int main() {
     lista.AddToBeggining(5);
     lista.AddToEnd(2);
     lista.Print();
+    cout << lista.nextElement(4) << endl;
+    cout << lista.prevElement(4) << endl;
     lista.Clear();
     lista.Print();
 
