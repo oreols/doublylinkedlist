@@ -75,6 +75,27 @@ class DoublyLinkedList{
             }
             current->next = new_node;
         }
+
+        void RemoveFromTheBeginning(int data){
+            if(!head){
+                cout << "Lista jest pusta" << endl;
+                return;
+            {
+
+            if(head == tail){
+                delete head;
+                head = tail = NULL;        
+            }else{
+                Node* temp = head;
+                head = head->next;
+                head->prev = NULL;
+                delete temp;
+            }    
+            
+            
+            
+
+
             
 
 
