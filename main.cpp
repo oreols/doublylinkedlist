@@ -207,6 +207,8 @@ int main() {
     lista.AddToBeggining(5);
     lista.AddToEnd(2);
     lista.Print();
+    lista.Clear();
+    lista.Print();
 
     return 0;
 }
