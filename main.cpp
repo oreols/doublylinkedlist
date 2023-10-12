@@ -64,18 +64,26 @@ class DoublyLinkedList{
                 current = current->next; 
                 i++;
             }
-
+            if(!current){
+                cout << "Index poza zakresem" << endl;
+                return;
+            }
+            new_node->next = current->next;
+            new_node->prev = current;
+            if(current->next){
+                current->next->prev = new_node;
+            }
+            current->next = new_node;
+        }
             
 
 
-        }
-
-
-
-
-
-        
     }
+
+
+
+
+
 
 
 
